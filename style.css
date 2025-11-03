@@ -1,0 +1,407 @@
+/* ===== GLOBAL FONT SETTINGS ===== */
+/* Apply Inter as the default body font */
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  padding-top: 76px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 62px;
+  }
+}
+
+/* Apply Playfair Display to all headings */
+h1, h2, h3, h4, h5, h6,
+.brand-font {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+/* ===== NAVBAR STYLING ===== */
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.navbar-brand span {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.nav-link {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff6b9d !important;
+  transform: translateY(-2px);
+}
+
+/* Ensure navbar items are readable */
+.navbar-nav .nav-link {
+  color: black !important;
+}
+
+/* Added for navbar toggler visibility */
+.navbar-toggler {
+  border: 2px solid #000;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ===== HERO SECTION ===== */
+.hero-img {
+  transition: transform 0.3s ease;
+}
+
+.hero-img:hover {
+  transform: scale(1.02);
+}
+
+/* Hero section responsive adjustments */
+@media (max-width: 992px) {
+  .hero-img {
+    max-height: 300px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* ===== GALLERY SECTION ===== */
+/* Gallery card responsive sizing */
+.gallery-card {
+  height: 60vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.gallery-card:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .gallery-card {
+    height: 40vh;
+    margin-bottom: 15px;
+  }
+}
+
+/* Art number label */
+.art-number {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 576px) {
+  .art-number {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+}
+
+/* ===== EVENT/PAINTING STYLES SECTION ===== */
+.event-card {
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Event cards responsive sizing */
+@media (max-width: 576px) {
+  .event-card {
+    margin-bottom: 15px;
+  }
+}
+
+/* ===== LIGHTBOX ===== */
+/* Lightbox Modal Styles */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  animation: zoomIn 0.3s ease;
+  display: none;
+}
+
+.lightbox-content.loaded {
+  display: block;
+}
+
+.lightbox-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  font-family: 'Inter', sans-serif;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); }
+  to { transform: scale(1); }
+}
+
+/* ===== SOCIAL BUTTONS ===== */
+/* ======= GLOBAL BUTTON SIZE ======= */
+a.social-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: 0.3s;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+@media (max-width: 576px) {
+  a.social-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* ======= INSTAGRAM BUTTON ======= */
+.insta-btn {
+  background-color: white;
+  color: #E1306C;
+  border-color: #E1306C;
+}
+
+.insta-btn:hover {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  color: white;
+  transform: scale(1.1);
+  border: none;
+}
+
+.insta-btn:hover i {
+  -webkit-text-stroke: 1px white;
+}
+
+/* ======= FACEBOOK BUTTON ======= */
+.fb-btn {
+  background-color: white;
+  color: #1877f2;
+  border-color: #1877f2;
+}
+
+.fb-btn:hover {
+  background: linear-gradient(45deg, #1877f2, #0d6efd);
+  color: white;
+  transform: scale(1.1);
+  border: none;
+}
+
+.fb-btn:hover i {
+  -webkit-text-stroke: 1px white;
+}
+
+/* ======= TIKTOK BUTTON ======= */
+.tiktok-btn {
+  background-color: white;
+  color: #000000;
+  border-color: #000000;
+}
+
+.tiktok-btn:hover {
+  background: linear-gradient(45deg, #ff0050, #00f2ea, #000000);
+  color: white;
+  transform: scale(1.1);
+  border: none;
+}
+
+.tiktok-btn:hover i {
+  -webkit-text-stroke: 1px white;
+}
+
+/* ======= POP-OUT EFFECT ON ALL BUTTONS ======= */
+a.social-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== PURCHASE BANNER ===== */
+.alert {
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===== CONTACT SECTION ===== */
+#Contact a {
+  color: #ff6b9d;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+#Contact a:hover {
+  color: #ff8ab5;
+  text-decoration: underline;
+}
+
+/* ===== BUTTON STYLING ===== */
+button, .btn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+/* ===== PARAGRAPH AND TEXT STYLING ===== */
+p, .lead, .text-body-secondary {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Ensure bold text in paragraphs uses Inter */
+p b, .lead b {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+/* ===== SMOOTH SCROLLING ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== FOOTER ===== */
+footer span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* ===== ANIMATED GRADIENT HERO SECTIONS ===== */
+
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*Warm Artist Palette (Orange & Pink - Similar to Original) */
+.hero-gradient-warm {
+  background: linear-gradient(
+    45deg,
+    #ff9a56,
+    #ff6a88,
+    #ffecd2,
+    #fcb69f,
+    #ff8a94,
+    #ff6b9d,
+    #ffa8a8
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+}
+
+
+
+
+
+/* Option 7: Pastel Dream (Soft & Elegant) */
+.hero-gradient-pastel {
+  background: linear-gradient(
+    135deg,
+    #ffeaa7,
+    #dfe6e9,
+    #fab1a0,
+    #fd79a8,
+    #a29bfe,
+    #ffeaa7
+  );
+  background-size: 400% 400%;
+  animation: gradientFlowDiagonal 16s ease infinite;
+}
+
+/* Keep dark text for warm gradient */
+.hero-gradient-warm h1,
+.hero-gradient-warm p {
+  color: #5c4033 !important;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
